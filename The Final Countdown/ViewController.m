@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "TheFinalCountdown.h"
 
-@interface ViewController ()
+@interface ViewController () <TheFinalCountdownDelegate>
 
 @end
 
@@ -16,12 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    TheFinalCountdown *timer = [TheFinalCountdown timerAtOrigin:CGPointMake(200, 200) delegate:self time:10];
+    timer.center = self.view.center;
+    [self.view addSubview:timer];
+    
+    [timer fire];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - TheFinalCountdownDelegate Methods
+
+- (void)timerFinished {
+    NSLog(@"Finished!");
 }
 
 @end
