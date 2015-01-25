@@ -15,7 +15,8 @@
 		07A859181A709E9A00EAFD19 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A859171A709E9A00EAFD19 /* Images.xcassets */; };
 		07A8591B1A709E9A00EAFD19 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A859191A709E9A00EAFD19 /* LaunchScreen.xib */; };
 		07A859271A709E9A00EAFD19 /* The_Final_CountdownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A859261A709E9A00EAFD19 /* The_Final_CountdownTests.m */; };
-		07A859321A709EF400EAFD19 /* TheFinalCountdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A859311A709EF400EAFD19 /* TheFinalCountdown.m */; };
+		07A859321A709EF400EAFD19 /* ESCountdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A859311A709EF400EAFD19 /* ESCountdownView.m */; };
+		07DA64FC1A71F93D002A6038 /* ColorChangingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DA64FB1A71F93D002A6038 /* ColorChangingLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +44,10 @@
 		07A859201A709E9A00EAFD19 /* The Final CountdownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Final CountdownTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A859251A709E9A00EAFD19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A859261A709E9A00EAFD19 /* The_Final_CountdownTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = The_Final_CountdownTests.m; sourceTree = "<group>"; };
-		07A859301A709EF400EAFD19 /* TheFinalCountdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheFinalCountdown.h; sourceTree = "<group>"; };
-		07A859311A709EF400EAFD19 /* TheFinalCountdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheFinalCountdown.m; sourceTree = "<group>"; };
+		07A859301A709EF400EAFD19 /* ESCountdownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCountdownView.h; sourceTree = "<group>"; };
+		07A859311A709EF400EAFD19 /* ESCountdownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCountdownView.m; sourceTree = "<group>"; };
+		07DA64FA1A71F93D002A6038 /* ColorChangingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorChangingLabel.h; sourceTree = "<group>"; };
+		07DA64FB1A71F93D002A6038 /* ColorChangingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorChangingLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +93,10 @@
 				07A8590C1A709E9A00EAFD19 /* AppDelegate.m */,
 				07A859111A709E9A00EAFD19 /* ViewController.h */,
 				07A859121A709E9A00EAFD19 /* ViewController.m */,
-				07A859301A709EF400EAFD19 /* TheFinalCountdown.h */,
-				07A859311A709EF400EAFD19 /* TheFinalCountdown.m */,
+				07A859301A709EF400EAFD19 /* ESCountdownView.h */,
+				07A859311A709EF400EAFD19 /* ESCountdownView.m */,
+				07DA64FA1A71F93D002A6038 /* ColorChangingLabel.h */,
+				07DA64FB1A71F93D002A6038 /* ColorChangingLabel.m */,
 				07A859141A709E9A00EAFD19 /* Main.storyboard */,
 				07A859171A709E9A00EAFD19 /* Images.xcassets */,
 				07A859191A709E9A00EAFD19 /* LaunchScreen.xib */,
@@ -230,7 +235,8 @@
 				07A8590D1A709E9A00EAFD19 /* AppDelegate.m in Sources */,
 				07A859101A709E9A00EAFD19 /* The_Final_Countdown.xcdatamodeld in Sources */,
 				07A859131A709E9A00EAFD19 /* ViewController.m in Sources */,
-				07A859321A709EF400EAFD19 /* TheFinalCountdown.m in Sources */,
+				07DA64FC1A71F93D002A6038 /* ColorChangingLabel.m in Sources */,
+				07A859321A709EF400EAFD19 /* ESCountdownView.m in Sources */,
 				07A8590A1A709E9A00EAFD19 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +428,7 @@
 				07A8592C1A709E9A00EAFD19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07A8592D1A709E9A00EAFD19 /* Build configuration list for PBXNativeTarget "The Final CountdownTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +437,7 @@
 				07A8592F1A709E9A00EAFD19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

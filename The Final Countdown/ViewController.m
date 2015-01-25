@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "TheFinalCountdown.h"
+#import "ESCountdownView.h"
+#import "ColorChangingLabel.h"
 
-@interface ViewController () <TheFinalCountdownDelegate>
+@interface ViewController () <ESCountdownViewDelegate>
 
 @end
 
@@ -17,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    TheFinalCountdown *timer = [TheFinalCountdown timerAtOrigin:CGPointMake(200, 200) delegate:self time:10];
+    ESCountdownView *timer = [ESCountdownView timerAtOrigin:CGPointMake(200, 200) delegate:self time:10];
     timer.center = self.view.center;
     [self.view addSubview:timer];
     
