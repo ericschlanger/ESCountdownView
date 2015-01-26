@@ -15,10 +15,33 @@
 
 @interface ESCountdownView : UIView
 
-//Initializers
-+ (instancetype)timerAtOrigin:(CGPoint)origin delegate:(id<ESCountdownViewDelegate>)delegate time:(NSInteger)time;
+///--------------------------------
+/// @name Creating countdown timers
+///--------------------------------
 
-//Starting and stopping
+/**
+ Initializes an `ESCountdownView` object at the specified location with the specified time.
+ Uses the default starting and ending colors of black and red, respectively.
+ @param origin The origin for the timer's frame.
+ @param time The starting time value for the timer.
+ @return The newly-initialized timer
+ */
++ (instancetype)timerAtOrigin:(CGPoint)origin time:(NSInteger)time;
+
+/**
+ Initializes an `ESCountdownView` object at the specified location with the specified time, starting color, and ending color.
+ This is the designated initializer.
+ @param origin The origin for the timer's frame.
+ @param time The starting time value for the timer.
+ @param start
+ @return The newly-initialized timer
+ */
++ (instancetype)timerAtOrigin:(CGPoint)origin time:(NSInteger)time startColor:(UIColor *)startColor endColor:(UIColor *)endColor;
+
+///--------------------------------------
+/// @name Starting and Stopping the Timer
+///--------------------------------------
+
 - (void)fire;
 - (void)invalidate;
 

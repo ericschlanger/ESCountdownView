@@ -11,9 +11,11 @@
 
 @interface ESCountdownView ()
 @property (nonatomic) ColorChangingLabel *time;
+@property (nonatomic) NSTimer *timer;
 @property (nonatomic) NSInteger currentTime;
 @property (nonatomic) NSInteger startingTime;
-@property (nonatomic) NSTimer *timer;
+@property (nonatomic, strong) UIColor *startColor;
+@property (nonatomic, strong) UIColor *endColor;
 @end
 
 //Starting with a fixed size, will later change this
@@ -22,19 +24,27 @@ CGFloat const kTimerHeight = 50;
 
 CGFloat const kColorChangeAnimationDuration = 0.3f;
 CGFloat const kPulseAnimationDuration = 0.2f;
-
 CGFloat const kPulseScaleEnlarged = 1.1f;
 CGFloat const kPulseScaleOriginal = 1;
+
+//Defaults
+#define kDefaultStartColor [UIColor blackColor]
+#define kDefaultEndColor [UIColor redColor]
 
 @implementation ESCountdownView
 
 #pragma mark - Initializers
 
-+ (instancetype)timerAtOrigin:(CGPoint)origin delegate:(id<ESCountdownViewDelegate>)delegate time:(NSInteger)time {
++ (instancetype)timerAtOrigin:(CGPoint)origin time:(NSInteger)time {
+    return [ESCountdownView timerAtOrigin:origin time:time startColor:kDefaultStartColor endColor:kDefaultEndColor];
+}
+
++ (instancetype)timerAtOrigin:(CGPoint)origin time:(NSInteger)time startColor:(UIColor *)startColor endColor:(UIColor *)endColor {
     ESCountdownView *timer = [[ESCountdownView alloc] initWithFrame:CGRectMake(origin.x, origin.y, kTimerWidth, kTimerHeight) time:time];
     timer.currentTime = time;
     timer.startingTime = time;
-    timer.delegate = delegate;
+    timer.startColor = startColor;
+    timer.endColor = endColor;
     return timer;
 }
 
@@ -71,9 +81,7 @@ CGFloat const kPulseScaleOriginal = 1;
         self.currentTime -= 1;
         self.time.text = [NSString stringWithFormat:@"%lu",self.currentTime];
         [self pulse];
-        CGFloat percentage = (self.startingTime - self.currentTime) / (float)self.startingTime;
-        UIColor *color = [self calcColorFromStartColor:[UIColor blackColor] targetColor:[UIColor redColor] percentage:percentage];
-        [self animateColorTo:color];
+        [self changeColor];
     }
 }
 
@@ -85,6 +93,12 @@ CGFloat const kPulseScaleOriginal = 1;
 }
 
 #pragma mark - Animations
+
+- (void)changeColor {
+    CGFloat percentage = (self.startingTime - self.currentTime) / (float)self.startingTime;
+    UIColor *color = [self calcColorFromStartColor:self.startColor targetColor:self.endColor percentage:percentage];
+    [self animateColorTo:color];
+}
 
 - (void)animateColorTo:(UIColor *)color {
     [CATransaction begin];
