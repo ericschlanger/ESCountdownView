@@ -44,7 +44,6 @@ CGFloat const kPulseScaleOriginal = 1;
         self.time = ({
             ColorChangingLabel *label = [[ColorChangingLabel alloc] initWithFrame:self.bounds];
             label.text = [NSString stringWithFormat:@"%lu",time];
-            label.backgroundColor = [UIColor greenColor];
             label.textAlignment = NSTextAlignmentCenter;
             label;
         });

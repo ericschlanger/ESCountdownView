@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    ESCountdownView *timer = [ESCountdownView timerAtOrigin:CGPointMake(200, 200) delegate:self time:10];
+    ESCountdownView *timer = [ESCountdownView timerAtOrigin:CGPointMake(200, 200) delegate:self time:5];
     timer.center = self.view.center;
     [self.view addSubview:timer];
     
