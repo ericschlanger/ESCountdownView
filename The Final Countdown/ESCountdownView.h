@@ -9,15 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @protocol ESCountdownViewDelegate <NSObject>
-@required
+@optional
 - (void)timerFinished;
 @end
 
 @interface ESCountdownView : UIView
 
+//Initializers
 + (instancetype)timerAtOrigin:(CGPoint)origin delegate:(id<ESCountdownViewDelegate>)delegate time:(NSInteger)time;
 
+//Starting and stopping
 - (void)fire;
+- (void)invalidate;
 
 @property (nonatomic, weak) id<ESCountdownViewDelegate> delegate;
 

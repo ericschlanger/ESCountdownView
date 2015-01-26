@@ -26,6 +26,7 @@
 - (void)setupCATextLayer {
     self.textLayer = [[CATextLayer alloc] init];
     self.textLayer.frame = self.bounds;
+    self.textLayer.alignmentMode = kCAAlignmentCenter;
     self.textLayer.contentsScale = [[UIScreen mainScreen] scale];
     self.textLayer.rasterizationScale = [[UIScreen mainScreen] scale];
     
