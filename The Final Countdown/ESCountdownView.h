@@ -33,7 +33,8 @@
  This is the designated initializer.
  @param origin The origin for the timer's frame.
  @param time The starting time value for the timer.
- @param start
+ @param startColor The starting color the timer will animate from.
+ @param endColor The ending color the timer will animate to.
  @return The newly-initialized timer
  */
 + (instancetype)timerAtOrigin:(CGPoint)origin time:(NSInteger)time startColor:(UIColor *)startColor endColor:(UIColor *)endColor;
@@ -42,7 +43,14 @@
 /// @name Starting and Stopping the Timer
 ///--------------------------------------
 
+/**
+ Starts the countdown
+ */
 - (void)fire;
+
+/**
+ Stops the countdown
+ */
 - (void)invalidate;
 
 @property (nonatomic, weak) id<ESCountdownViewDelegate> delegate;
